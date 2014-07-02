@@ -18,6 +18,7 @@ public class TerrainCommand implements CommandExecutor {
 	public void execute(String command, CommandSender sender, String[] args, String label) {
 		if(!sender.hasPermission(permission_terrain)) {
 			sender.sendMessage("You do not have the required permission to use this command.");
+			return;
 		}
 		
 		try {
