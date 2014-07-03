@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.mackthehobbit.mbplugin.terrain.generators.FlatTerrainGenerator;
+import com.mackthehobbit.mbplugin.terrain.generators.SkygridTerrainGenerator;
 import com.mackthehobbit.mbplugin.terrain.generators.VoidTerrainGenerator;
 import com.mbserver.api.MBServerPlugin;
 import com.mbserver.api.Manifest;
@@ -19,6 +20,7 @@ public class MoreTerrainPlugin extends MBServerPlugin {
 		this.getPluginManager().registerCommand("terrain", command = new TerrainCommand(this));
 		this.addTerrainGenerator("flat", FlatTerrainGenerator.class);
 		this.addTerrainGenerator("void", VoidTerrainGenerator.class);
+		this.addTerrainGenerator("skygrid", SkygridTerrainGenerator.class);
 	}
 	
 	public boolean addTerrainGenerator(String name, Class<? extends MoreTerrainGenerator> terrainGeneratorClass) {
