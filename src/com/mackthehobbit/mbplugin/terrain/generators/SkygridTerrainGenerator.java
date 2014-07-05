@@ -12,7 +12,7 @@ public class SkygridTerrainGenerator extends MoreTerrainGenerator {
 	
 	private int size;
 	private Random random = new Random();
-	ArrayList<Material> values = new ArrayList<Material>();
+	private Material items[] = Material.values();
 	
 	@Override
 	public void init() {
@@ -51,7 +51,7 @@ public class SkygridTerrainGenerator extends MoreTerrainGenerator {
 			for(int y = 0; y < Chunk.SIZE; y += size) {
 				for(int z = 0; z < Chunk.SIZE; z += size) {
 					if((chunkx + x) % size == 0 && (chunky + y) % size == 0 && (chunkz + z) % size == 0)
-						chunk.set(x, y, z, values.get(random.nextInt(values.size())).getID());
+						chunk.set(x, y, z, items[random.nextInt(items.length)]);
 				}
 			}
 		}
